@@ -64,7 +64,8 @@ One of the biggest advantage to use AKS is that instead of creating resources in
 
 This lab uses a Dockerized ASP.NET Core web application - MyHealthClinic (MHC) and is deployed to a Kubernetes cluster running on Azure Kubernetes Service (AKS) using Azure DevOps.
 
-    There is a mhc-aks.yaml manifest file which consists of definitions to spin up Deployments and Services such as Load Balancer in the front and Redis Cache in the backend. The MHC application will be running in the mhc-front pod along with the Load Balancer.
+    - There is a mhc-aks.yaml manifest file which consists of definitions to spin up Deployments and Services such as Load Balancer in the front and Redis Cache in the backend. 
+    - The MHC application will be running in the mhc-front pod along with the Load Balancer.
 
 The following image will walk you through all the steps explained in this lab
 
@@ -86,12 +87,6 @@ The following tasks will be performed:
 - Initiate the build to automatically deploy the application
 
 
-
-
-
-
-
-
 ## Prerequisites
 
 
@@ -102,3 +97,39 @@ The following tasks will be performed:
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+##  Set Up Azure & DevOps
+
+### DevOps
+1. Follow this link <a href="http://azuredevopsdemogenerator.azurewebsites.net/?TemplateId=77372&Name=AKS">Azure DevOps Demo Generator </a>
+2. Login if needed.
+3. Fill in as shown below
+
+<img src="images/createproject.png" alt="Logo" height="700">
+
+4. Create Project
+5. Wait for project to finish
+
+<img src="images/wait.png" alt="Logo" height="100">
+
+6. Navigate to project
+
+<img src="images/done.png" alt="Logo" height="100">
+
+### Azure
+
+This is what we will deploy.
+
+| **Azure resources**                                                                       | **Description**                                       |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| <img src="images/container_registry.png" alt="Logo" height="25"> Azure Container Registry | Used to store the Docker images privately             |
+| <img src="images/aks.png" alt="Logo" height="25"> AKS                                     | Docker images are deployed to Pods running inside AKS |
+| <img src="images/sqlserver.png" alt="Logo" height="25"> Azure SQL Server                  | SQL Server on Azure to host database                  |
+
+
+1. Login to the Azure Portal: <a href="https://portal.azure.com">portal.azure.com</a>
+2. Launch the Azure Cloud Shell from the Azure portal and choose Bash.
+<img src="images/cloudshell.png" alt="Logo" height="100">
+3. Deploy Kubernetes to Azure, using CLI
