@@ -131,5 +131,6 @@ This is what we will deploy.
 
 1. Login to the Azure Portal: <a href="https://portal.azure.com">portal.azure.com</a>
 2. Launch the Azure Cloud Shell from the Azure portal and choose Bash.
-<img src="images/cloudshell.png" alt="Logo" height="100">
-3. Deploy Kubernetes to Azure, using CLI
+<br>
+<img src="images/cloudshell.png" alt="Logo" height="50">
+1. Deploy Kubernetes to Azure, using CLI
